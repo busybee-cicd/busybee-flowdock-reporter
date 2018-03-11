@@ -27,9 +27,11 @@ export class BusybeeFlowdockReporter {
   private conf: any;
   private warningThreshold: number;
   private failureThreshold: number;
+  skipInLocalMode: boolean;
 
   constructor(conf) {
     this.conf = conf;
+    this.skipInLocalMode = conf.skipInLocalMode;
     this.warningThreshold = conf.warningThreshold || DEFAULT_WARNING_THRESHOLD;
     this.failureThreshold = conf.failureThreshold || DEFAULT_FAILURE_THRESHOLD;
 

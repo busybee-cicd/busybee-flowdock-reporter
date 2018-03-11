@@ -26,6 +26,7 @@ var REQUIRED = ['token', 'author', 'threadId', 'threadTitle'];
 var BusybeeFlowdockReporter = /** @class */ (function () {
     function BusybeeFlowdockReporter(conf) {
         this.conf = conf;
+        this.skipInLocalMode = conf.skipInLocalMode;
         this.warningThreshold = conf.warningThreshold || DEFAULT_WARNING_THRESHOLD;
         this.failureThreshold = conf.failureThreshold || DEFAULT_FAILURE_THRESHOLD;
         var failures = [];
