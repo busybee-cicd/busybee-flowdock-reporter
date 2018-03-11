@@ -1,0 +1,28 @@
+{
+  "name": "busybee-flowdock-reporter",
+  "version": "1.0.0",
+  "description": "Report Busybee REST Test Results to Flowdock",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "watch 'npm run build' {src,test}",
+    "start": "node ./dist/src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.build.ge.com:Busybee/busybee-flowdock-reporter.git"
+  },
+  "author": "Simon Townsend",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.5",
+    "request": "^2.83.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.104",
+    "@types/node": "^9.4.7",
+    "npm-watch": "^0.3.0",
+    "typescript": "^2.7.2"
+  }
+}
