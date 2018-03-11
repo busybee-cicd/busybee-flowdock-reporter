@@ -23,7 +23,7 @@ const REQUIRED = ['token', 'author', 'threadId', 'threadTitle'];
    failureThreshold: 75
  }
  */
-export class BusybeeFlowdock {
+export class BusybeeFlowdockReporter {
   private conf: any;
   private warningThreshold: number;
   private failureThreshold: number;

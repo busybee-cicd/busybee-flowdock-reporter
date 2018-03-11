@@ -23,8 +23,8 @@ var REQUIRED = ['token', 'author', 'threadId', 'threadTitle'];
    failureThreshold: 75
  }
  */
-var BusybeeFlowdock = /** @class */ (function () {
-    function BusybeeFlowdock(conf) {
+var BusybeeFlowdockReporter = /** @class */ (function () {
+    function BusybeeFlowdockReporter(conf) {
         this.conf = conf;
         this.warningThreshold = conf.warningThreshold || DEFAULT_WARNING_THRESHOLD;
         this.failureThreshold = conf.failureThreshold || DEFAULT_FAILURE_THRESHOLD;
@@ -43,7 +43,7 @@ var BusybeeFlowdock = /** @class */ (function () {
             }
         }
     }
-    BusybeeFlowdock.prototype.run = function (testSuiteResults) {
+    BusybeeFlowdockReporter.prototype.run = function (testSuiteResults) {
         var _this = this;
         var restSuites = _.filter(testSuiteResults, function (ts) { return ts.type === 'REST'; });
         var body = ''; // full Flowdock message body
@@ -103,12 +103,12 @@ var BusybeeFlowdock = /** @class */ (function () {
             throw new Error("Error publishing test results to Flowdock");
         }
     };
-    BusybeeFlowdock.prototype.send = function (payload) {
+    BusybeeFlowdockReporter.prototype.send = function (payload) {
         logger.debug("sending to flowdock");
         logger.debug(payload);
         request.post({ url: flowUrl, body: payload, json: true });
     };
-    BusybeeFlowdock.prototype.determineStatusColor = function (score) {
+    BusybeeFlowdockReporter.prototype.determineStatusColor = function (score) {
         var statusColor = 'green';
         if (score < this.warningThreshold) {
             if (score < this.failureThreshold) {
@@ -120,7 +120,7 @@ var BusybeeFlowdock = /** @class */ (function () {
         }
         return statusColor;
     };
-    return BusybeeFlowdock;
+    return BusybeeFlowdockReporter;
 }());
-exports.BusybeeFlowdock = BusybeeFlowdock;
+exports.BusybeeFlowdockReporter = BusybeeFlowdockReporter;
 //# sourceMappingURL=index.js.map
