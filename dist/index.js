@@ -10,7 +10,7 @@ var DEFAULT_FAILURE_THRESHOLD = 75;
 var REQUIRED = ['token', 'author', 'threadId', 'threadTitle'];
 /*
  {
-   token: 'd03582ebb05972586c5f183ab5e1edda',
+   token: '<TOKEN>',
    author: {
      name: 'Sweeney Jenkins',
      avatar: 'https://github.build.ge.com/avatars/u/23999?s=466',
@@ -107,15 +107,6 @@ var BusybeeFlowdock = /** @class */ (function () {
         logger.debug("sending to flowdock");
         logger.debug(payload);
         request.post({ url: flowUrl, body: payload, json: true });
-    };
-    BusybeeFlowdock.prototype.buildTestPassString = function (suiteName) {
-        return this.buildVerdictString(suiteName, 'green');
-    };
-    BusybeeFlowdock.prototype.buildTestFailString = function (suiteName) {
-        return this.buildVerdictString(suiteName, 'red');
-    };
-    BusybeeFlowdock.prototype.buildVerdictString = function (suiteName, color) {
-        return "<span style='color:" + color + ";'>" + suiteName + "<span>";
     };
     BusybeeFlowdock.prototype.determineStatusColor = function (score) {
         var statusColor = 'green';
