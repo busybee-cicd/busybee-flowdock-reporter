@@ -50,22 +50,22 @@ var BusybeeFlowdockReporter = /** @class */ (function () {
         var globalCount = 0;
         var globalPass = 0;
         restSuites.forEach(function (testSuite) {
-            var count = 0; // total tests in testSuite
-            var pass = 0; // total pass for testSuite
+            var tsCount = 0; // total tests in testSuite
+            var tsPass = 0; // total pass for testSuite
             testSuite.testSets.forEach(function (testSet) {
                 testSet.tests.forEach(function (t) {
-                    count += 1;
+                    tsCount += 1;
                     if (t.pass) {
-                        pass += 1;
+                        tsPass += 1;
                     }
                 });
             });
             // build summary message for this testSuite
-            var score = Math.round(pass / count * 100);
-            var color = _this.determineStatusColor(score);
-            body += "<span style='color:" + color + ";'>" + testSuite.id + " Complete With " + score + "% Passing</span><br/>";
-            globalCount += count;
-            globalPass += globalPass;
+            var tsScore = Math.round(tsPass / tsCount * 100);
+            var color = _this.determineStatusColor(tsScore);
+            body += "<span style='color:" + color + ";'>" + testSuite.id + " Complete With " + tsScore + "% Passing</span><br/>";
+            globalCount += tsCount;
+            globalPass += tsPass;
         });
         // summarize the complete results and create the message title
         var statusValue = 'PASSED';
@@ -81,7 +81,7 @@ var BusybeeFlowdockReporter = /** @class */ (function () {
             author: this.conf.author,
             flow_token: this.conf.token,
             event: 'activity',
-            title: globalPass + "/" + globalCount + " (" + globalScore + "%) Passing",
+            title: "All Suites Complete with " + globalPass + "/" + globalCount + " (" + globalScore + "%) Passing",
             body: body,
             external_thread_id: this.conf.threadId,
             thread: {

@@ -56,23 +56,23 @@ export class BusybeeFlowdockReporter {
     let globalCount = 0;
     let globalPass = 0;
     restSuites.forEach(testSuite => {
-      let count = 0; // total tests in testSuite
-      let pass = 0; // total pass for testSuite
+      let tsCount = 0; // total tests in testSuite
+      let tsPass = 0; // total pass for testSuite
       testSuite.testSets.forEach(testSet => {
         testSet.tests.forEach(t => {
-          count += 1;
+          tsCount += 1;
           if (t.pass) {
-            pass += 1;
+            tsPass += 1;
           }
         });
       });
 
       // build summary message for this testSuite
-      let score = Math.round(pass / count * 100);
-      let color = this.determineStatusColor(score);
-      body += `<span style='color:${color};'>${testSuite.id} Complete With ${score}% Passing</span><br/>`
-      globalCount += count;
-      globalPass += globalPass;
+      let tsScore = Math.round(tsPass / tsCount * 100);
+      let color = this.determineStatusColor(tsScore);
+      body += `<span style='color:${color};'>${testSuite.id} Complete With ${tsScore}% Passing</span><br/>`
+      globalCount += tsCount;
+      globalPass += tsPass;
     });
 
     // summarize the complete results and create the message title
@@ -89,7 +89,7 @@ export class BusybeeFlowdockReporter {
       author: this.conf.author,
       flow_token: this.conf.token,
       event: 'activity',
-      title: `${globalPass}/${globalCount} (${globalScore}%) Passing`,
+      title: `All Suites Complete with ${globalPass}/${globalCount} (${globalScore}%) Passing`,
       body: body,
       external_thread_id: this.conf.threadId,
       thread: {
