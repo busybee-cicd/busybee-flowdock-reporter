@@ -13,7 +13,7 @@ const BusybeeFlowdockReporter = require('busybee-flowdock-reporter').BusybeeFlow
 ...
 
 # add the following property at the top-level of your busybee conf.js
-"reporters": [
+reporters: [
     new BusybeeFlowdockReporter({
       token: '<YOUR_TOKEN>',
       author: { // The flowdock user to publish the message as
@@ -22,7 +22,8 @@ const BusybeeFlowdockReporter = require('busybee-flowdock-reporter').BusybeeFlow
         email: '<my_service>@ge.com'
       },
       threadId: 'api-it-results',
-      threadTitle: 'CR API IT Results'
+      threadTitle: 'CR API IT Results',
+      skipInLocalMode: true // do not run when busybee is in 'localMode'
     })
 ]
 
