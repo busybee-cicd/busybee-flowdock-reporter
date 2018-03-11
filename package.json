@@ -2,7 +2,7 @@
   "name": "busybee-flowdock-reporter",
   "version": "1.0.0",
   "description": "Report Busybee REST Test Results to Flowdock",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "watch": "watch 'npm run build' {src,test}",
