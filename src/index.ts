@@ -125,11 +125,10 @@ export class BusybeeFlowdockReporter {
   determineStatusColor(score) {
     let statusColor = 'green';
     if (score < this.warningThreshold) {
-      if (score < this.failureThreshold) {
-        statusColor = 'red';
-      } else {
         statusColor = 'yellow';
-      }
+    }
+    if (score < this.failureThreshold) {
+      statusColor = 'red';
     }
 
     return statusColor;

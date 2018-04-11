@@ -112,12 +112,10 @@ var BusybeeFlowdockReporter = /** @class */ (function () {
     BusybeeFlowdockReporter.prototype.determineStatusColor = function (score) {
         var statusColor = 'green';
         if (score < this.warningThreshold) {
-            if (score < this.failureThreshold) {
-                statusColor = 'red';
-            }
-            else {
-                statusColor = 'yellow';
-            }
+            statusColor = 'yellow';
+        }
+        if (score < this.failureThreshold) {
+            statusColor = 'red';
         }
         return statusColor;
     };
