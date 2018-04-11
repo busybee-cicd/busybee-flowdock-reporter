@@ -1,6 +1,6 @@
 {
   "name": "busybee-flowdock-reporter",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Report Busybee REST Test Results to Flowdock",
   "main": "dist/index.js",
   "scripts": {
