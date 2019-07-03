@@ -11,10 +11,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.build.ge.com:Busybee/busybee-flowdock-reporter.git"
+    "url": "git@github.com:busybee-cicd/busybee-flowdock-reporter.git"
   },
   "author": "Simon Townsend",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.5",
     "request": "^2.83.0"

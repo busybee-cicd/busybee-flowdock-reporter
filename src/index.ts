@@ -12,13 +12,13 @@ const REQUIRED = ['token', 'author', 'threadId', 'threadTitle'];
  {
    token: '<TOKEN>',
    author: {
-     name: 'Sweeney Jenkins',
-     avatar: 'https://github.build.ge.com/avatars/u/23999?s=466',
-     email: 'Service.SweeneyJenkins@ge.com'
+     name: 'Jenkins',
+     avatar: 'https://github.com/avatars/u/23999?s=466',
+     email: 'jenkins@email.com'
    },
-   threadId: 'cr-it-results',
-   threadTitle: 'Config Reviewer IT Results',
-   resultsUrl: http://whatever.com,
+   threadId: 'api-it-results',
+   threadTitle: 'API IT Results',
+   resultsUrl: http://my-jenkins.com,
    warningThreshold: 85,
    failureThreshold: 75
  }

@@ -18,12 +18,12 @@ reporters: [
       token: '<YOUR_TOKEN>',
       author: { // The flowdock user to publish the message as
         name: 'My Service',
-        avatar: 'https://github.build.ge.com/avatars/u/<your_service>',
-        email: '<my_service>@ge.com'
+        avatar: 'https://github.com/avatars/u/<your_service>',
+        email: '<my_service>@email.com'
       },
       threadId: 'api-it-results',
-      threadTitle: 'CR API IT Results',
-      skipInLocalMode: true // do not run when busybee is in 'localMode'
+      threadTitle: 'My IT Results',
+      skipInLocalMode: true // do not execute when busybee is in 'localMode'
     })
 ]
 
@@ -31,6 +31,6 @@ reporters: [
 ```
 
 **optional config keys not shown in the above example**  
-resultsUrl - string: If your results are published to a webserver ([Perhaps after building built with something like busybee-html-reporter](https://github.build.ge.com/Busybee/busybee-html-reporter)) then supplying a resultsUrl will wrap the flowdock message in a link to the supplied resultsUrl  
+resultsUrl - string: If your results are published to a webserver ([Perhaps after building built with something like busybee-html-reporter](https://github.com/busybee-cicd/busybee-html-reporter)) then supplying a resultsUrl will wrap the flowdock message in a link to the supplied resultsUrl  
 warningThreshold - number: defaults to 85, represents the minimum % of passed tests before marking the entire run as 'UNSTABLE'  
 failureThreshold - number: defaults to 75, represents the minimum % of passed tests before marking the entire run as 'FAILED'

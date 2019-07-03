@@ -13,11 +13,11 @@ var REQUIRED = ['token', 'author', 'threadId', 'threadTitle'];
    token: '<TOKEN>',
    author: {
      name: 'Sweeney Jenkins',
-     avatar: 'https://github.build.ge.com/avatars/u/23999?s=466',
-     email: 'Service.SweeneyJenkins@ge.com'
+     avatar: 'https://github.com/avatars/u/23999?s=466',
+     email: 'me@email.com'
    },
-   threadId: 'cr-it-results',
-   threadTitle: 'Config Reviewer IT Results',
+   threadId: 'api-it-results',
+   threadTitle: 'API IT Results',
    resultsUrl: http://whatever.com,
    warningThreshold: 85,
    failureThreshold: 75
